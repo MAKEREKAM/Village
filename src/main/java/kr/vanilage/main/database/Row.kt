@@ -1,4 +1,4 @@
 package kr.vanilage.main.database
 
-class Row {
+class Row(table : Table, vararg columns : Any) {
 }
