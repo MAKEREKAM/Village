@@ -1,4 +1,5 @@
 package kr.vanilage.main.database
 
-class Row(vararg columns : Any) {
+class Row(vararg column : Any) {
+    val columns = column
 }

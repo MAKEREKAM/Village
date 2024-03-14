@@ -7,4 +7,8 @@ class Table(vararg column : Any) {
     fun addRow(row : Row) {
         rows.add(row)
     }
+
+    fun deleteRow(vararg conditions : ConditionMaker) {
+
+    }
 }
