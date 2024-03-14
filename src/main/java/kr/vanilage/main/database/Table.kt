@@ -23,4 +23,25 @@ class Table(vararg column : Any) {
             }
         }
     }
+
+    fun updateRow(index : Int, value : Any, vararg conditions : ConditionMaker) {
+        for (i in rows.size - 1 downTo 0) {
+            var update = true
+
+            for (j in conditions) {
+                if (rows[i].columns[j.index] != j.value) {
+                    update = false
+                }
+            }
+
+            if (update) {
+                val row = rows[i].columns.toMutableList()
+                rows.removeAt(i)
+
+                row[index] = value
+
+                addRow(Row(row.toTypedArray()))
+            }
+        }
+    }
 }
