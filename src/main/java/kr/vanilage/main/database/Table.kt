@@ -40,7 +40,7 @@ class Table(vararg column : Any) {
 
                 row[index] = value
 
-                addRow(Row(row.toTypedArray()))
+                addRow(Row(*row.toTypedArray()))
             }
         }
     }
